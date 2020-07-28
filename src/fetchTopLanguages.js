@@ -8,7 +8,7 @@ const fetcher = (variables, token) => {
       query: `
       query userInfo($login: String!) {
         user(login: $login) {
-          repositories(isFork: false, first: 100, orderBy: {field: UPDATED_AT, direction: DESC}) {
+          repositories(isFork: true, first: 100, orderBy: {field: UPDATED_AT, direction: DESC}) {
             nodes {
               languages(first: 1, orderBy: {field: SIZE, direction: DESC}) {
                 edges {
